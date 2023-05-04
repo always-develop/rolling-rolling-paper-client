@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 function Button(props: ButtonProps) {
-  return <button>{props.name}</button>;
+  return <button className="Button">{props.name}</button>;
 }
 
 export default Button;
