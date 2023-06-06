@@ -4,6 +4,10 @@ import Modal from './modals/Modal';
 
 function ModalTest() {
   const [showModal, setShowModal] = useState(false);
+  const action = () => {
+    console.log('modal action CLICK!!!');
+  };
+
   return (
     <div>
       <button onClick={() => setShowModal(true)}>
@@ -13,6 +17,7 @@ function ModalTest() {
         createPortal(
           <Modal
             onClose={() => setShowModal(false)}
+            onAction={() => action()}
             header="모달 이름"
             contents="모달 내용"
           />,
