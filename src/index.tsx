@@ -4,19 +4,27 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Root from 'routes/root';
+import CommonLayout from 'views/layouts/CommonLayout';
 import ModalTest from 'components/ModalTest';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ModalTest />,
+    element: <CommonLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: '/',
+        element: <ModalTest />,
+      },
+    ],
   },
 ]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     {/* <App /> */}
