@@ -1,18 +1,39 @@
-import React from 'react';
-import Button from 'components/form/Button';
-import Input from 'components/form/Input';
 import ModalTest from 'components/ModalTest';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.scss';
+import CommonLayout from 'views/layouts/CommonLayout';
+import ClearLayout from 'views/layouts/ClearLayout';
+import Home from 'views/Home';
+
+const router = createBrowserRouter([
+  {
+    path: '/home',
+    element: <ClearLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: '/home',
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: '/',
+    element: <CommonLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: '/',
+        element: <ModalTest />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  function clickButton() {
-    console.log('click!!');
-  }
-
   return (
     <div className="App">
-      <Button name="햐이" onButtonClick={clickButton} />
-      <Input id="1" placeholder="필수야" />
-      <ModalTest />
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
