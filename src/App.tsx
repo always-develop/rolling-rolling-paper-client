@@ -4,6 +4,7 @@ import './App.scss';
 import CommonLayout from 'views/layouts/CommonLayout';
 import ClearLayout from 'views/layouts/ClearLayout';
 import Home from 'views/Home';
+import Login from 'views/Login';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
     // errorElement: </>
     children: [
       {
-        path: '/',
-        element: <ModalTest />,
+        path: '/login',
+        element: <Login />,
       },
     ],
   },
