@@ -22,6 +22,9 @@
 - router library로 채용
   - NextJS로 개발하지 않으면 react router dom을 많이 채용하여 사용한다고 함
 
+> splidejs
+- slider library로 채용
+
 ### Stylesheet
 
 > Sass
