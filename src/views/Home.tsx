@@ -1,50 +1,50 @@
-import React from "react";
-import logo from "assets/icons/logo.svg";
-import "assets/styles/views/Home.scss";
-import "@splidejs/react-splide/css";
-import Button from "components/form/Button";
-import { useNavigate } from "react-router-dom";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import ProfileImage from "components/ProfileImage";
+import React from 'react';
+import logo from 'assets/icons/logo.svg';
+import 'assets/styles/views/Home.scss';
+import '@splidejs/react-splide/css';
+import Button from 'components/form/Button';
+import { useNavigate } from 'react-router-dom';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import ProfileImage from 'components/ProfileImage';
 
-import test1 from "assets/images/test1.jpg";
-import test2 from "assets/images/test2.png";
-import test3 from "assets/images/test3.png";
-import test4 from "assets/images/test4.jpg";
-import test5 from "assets/images/test5.png";
+import test1 from 'assets/images/test1.jpg';
+import test2 from 'assets/images/test2.png';
+import test3 from 'assets/images/test3.png';
+import test4 from 'assets/images/test4.jpg';
+import test5 from 'assets/images/test5.png';
 
 function Home() {
   const navigate = useNavigate();
 
   function goLoginPage() {
-    navigate("/login");
+    navigate('/login');
   }
 
   const hotPaperList = [
     {
       profileUrl: test1,
-      name: "김기역",
+      name: '김기역',
     },
     {
       profileUrl: test2,
-      name: "이상해씨",
+      name: '이상해씨',
     },
     {
       profileUrl: test3,
-      name: "최디귿",
+      name: '최디귿',
     },
     {
       profileUrl: test4,
-      name: "박산다라마바사",
+      name: '박산다라마바사',
     },
     {
       profileUrl: test5,
-      name: "한동글동글",
+      name: '한동글동글',
     },
   ];
 
-  const hotPaperListTemplate = hotPaperList.map((person) => (
-    <SplideSlide>
+  const hotPaperListTemplate = hotPaperList.map((person, index) => (
+    <SplideSlide key={index}>
       <ProfileImage url={person.profileUrl} />
       <span>{person.name}</span>
     </SplideSlide>
@@ -58,7 +58,10 @@ function Home() {
       </div>
       <Button name="롤링롤링페이퍼 시작하기" onButtonClick={goLoginPage} />
       <div className="hot-paper-list">
-        <Splide options={{ rewind: true }} aria-label="React Splide Example">
+        <Splide
+          aria-label="Hot Rolling Paper Slider"
+          data-splide='{"type":"loop","perPage":3, "speed": 600, "fixedWidth": "10rem", "autoplay": true, "pauseOnHover": true, "pagination": false, "arrows": false, "gap": "1rem"}'
+        >
           {hotPaperListTemplate}
         </Splide>
       </div>
