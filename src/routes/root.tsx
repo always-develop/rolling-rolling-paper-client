@@ -1,4 +1,33 @@
 import React from 'react';
+import Home from 'views/Home';
+import Login from 'views/Login';
+import ClearLayout from 'views/layouts/ClearLayout';
+import CommonLayout from 'views/layouts/CommonLayout';
+
+export const Routes = [
+  {
+    path: '/home',
+    element: <ClearLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: '/home',
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: '/',
+    element: <CommonLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: '/login',
+        element: <Login />,
+      },
+    ],
+  },
+];
 
 export default function Root() {
   return (
