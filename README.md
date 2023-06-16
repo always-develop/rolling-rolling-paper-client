@@ -23,6 +23,7 @@
   - NextJS로 개발하지 않으면 react router dom을 많이 채용하여 사용한다고 함
 
 > splidejs
+
 - slider library로 채용
 
 ### Stylesheet
@@ -36,6 +37,9 @@
 
 **reset css**
 [참고 link (feat.teo)](https://velog.io/@teo/2022-CSS-Reset-다시-써보기)
+
+- html, body `font-size: 62.5%`이며 `1rem=10px`이다.
+- 전체 프로젝트에서 `rem`단위를 사용한다.
 
 ---
 
