@@ -1,0 +1,11 @@
+.text-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  label {
+  }
+  input {
+    max-width: 20rem;
+  }
+}
