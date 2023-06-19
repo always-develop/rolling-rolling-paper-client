@@ -62,3 +62,8 @@ npm start
 ```
 npm run build
 ```
+
+## 특이 사항
+### 카카오 로그인
+사용 e-mail: jy_4148@naver.com  
+SDK 버전: 2.2.0
