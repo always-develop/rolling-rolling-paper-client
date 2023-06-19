@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from 'assets/icons/logo.svg';
 import 'assets/styles/views/Home.scss';
 import '@splidejs/react-splide/css';
@@ -7,43 +7,37 @@ import { useNavigate } from 'react-router-dom';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import ProfileImage from 'components/ProfileImage';
 
-import test1 from 'assets/images/test1.jpg';
-import test2 from 'assets/images/test2.png';
-import test3 from 'assets/images/test3.png';
-import test4 from 'assets/images/test4.jpg';
-import test5 from 'assets/images/test5.png';
+type RollingPaper = {
+  profileUrl: string,
+  name: string,
+}
 
 function Home() {
   const navigate = useNavigate();
+
+  const [hotRollingPaperList, setList] = useState<RollingPaper[]>([]);
+
+  const handlerList = () => {
+    fetch('hot-rolling-paper-list', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => res.json())
+    .then((data) => {
+      setList(data);
+    })
+  }
+
+  useEffect(() => {
+    handlerList();
+  }, []);
 
   function goLoginPage() {
     navigate('/login');
   }
 
-  const hotPaperList = [
-    {
-      profileUrl: test1,
-      name: '김기역',
-    },
-    {
-      profileUrl: test2,
-      name: '이상해씨',
-    },
-    {
-      profileUrl: test3,
-      name: '최디귿',
-    },
-    {
-      profileUrl: test4,
-      name: '박산다라마바사',
-    },
-    {
-      profileUrl: test5,
-      name: '한동글동글',
-    },
-  ];
-
-  const hotPaperListTemplate = hotPaperList.map((person, index) => (
+  const hotPaperListTemplate = hotRollingPaperList.map((person, index) => (
     <SplideSlide key={index}>
       <ProfileImage url={person.profileUrl} />
       <span>{person.name}</span>
