@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from 'views/Home';
 import Login from 'views/Login';
+import SignUp from 'views/SignUp';
 import ClearLayout from 'views/layouts/ClearLayout';
 import CommonLayout from 'views/layouts/CommonLayout';
 
@@ -24,6 +25,10 @@ export const Routes = [
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/sign-up',
+        element: <SignUp />,
       },
     ],
   },
