@@ -1,4 +1,4 @@
-import React, { LegacyRef, forwardRef } from 'react';
+import React, { ChangeEventHandler, LegacyRef, forwardRef } from 'react';
 import 'assets/styles/form/Input.scss';
 
 type InputProps = {
@@ -6,6 +6,8 @@ type InputProps = {
   type: string;
   placeholder?: string;
   labelName?: string;
+  value: string,
+  onChange: ChangeEventHandler<HTMLInputElement>
 };
 
 const Input = forwardRef(function Input(props: InputProps, ref: LegacyRef<HTMLInputElement>) {
@@ -17,6 +19,8 @@ const Input = forwardRef(function Input(props: InputProps, ref: LegacyRef<HTMLIn
         type={props.type}
         placeholder={props.placeholder}
         ref={ref}
+        value={props.value}
+        onChange={props.onChange}
       ></input>
     </div>
   );
