@@ -7,12 +7,12 @@ import CommonLayout from 'views/layouts/CommonLayout';
 
 export const Routes = [
   {
-    path: '/home',
+    path: '/',
     element: <ClearLayout />,
-    // errorElement: </>
+    // errorElement: </>,
     children: [
       {
-        path: '/home',
+        path: '',
         element: <Home />,
       },
     ],
@@ -23,11 +23,11 @@ export const Routes = [
     // errorElement: </>
     children: [
       {
-        path: '/login',
+        path: 'login',
         element: <Login />,
       },
       {
-        path: '/sign-up',
+        path: 'sign-up',
         element: <SignUp />,
       },
     ],
