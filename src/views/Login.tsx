@@ -1,31 +1,17 @@
-import React, { useEffect } from "react";
-import "assets/styles/views/Home.scss";
+import React, { useEffect } from 'react';
+import 'assets/styles/views/Home.scss';
 
 function Login() {
-  // <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js" integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
-  // <script>
-  //   Kakao.init('%KAKAO_LOGIN_KEY%');
-  //   Kakao.isInitialized();
-  // </script>
   const loginByKakao = () => {
-    const scriptTag = document.createElement('script');
-    scriptTag.setAttribute('src', 'https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js');
-    scriptTag.setAttribute('integrity', 'sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC');
-    scriptTag.setAttribute('crossorigin', 'anonymous');
-    document.querySelector('head')?.appendChild(scriptTag);
+    const redirectUri = 'http://localhost:3000/sign-up';
+    const requestUrl = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_LOGIN_KEY}&redirect_uri=${redirectUri}`;
 
-    // scriptTag.onload = () => {
-    //   Kakao.init(process.env.KAKAO_LOGIN_KEY);
-    // }
+    window.location.href = requestUrl;
   };
-
-  useEffect(() => {
-    loginByKakao();
-  }, []);
 
   return (
     <div className="home-wrapper">
-      <button>카카오톡 로그인하기</button>
+      <button onClick={loginByKakao}>카카오톡 로그인하기</button>
     </div>
   );
 }
