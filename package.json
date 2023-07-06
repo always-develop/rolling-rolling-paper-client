@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.22.5",
     "@storybook/addon-essentials": "^7.0.10",
     "@storybook/addon-interactions": "^7.0.10",
     "@storybook/addon-links": "^7.0.10",
