@@ -1,45 +1,47 @@
-// main
-$primary: #ff3596;
-$secondary: #70ff00;
+:root {
+  // main
+  --primary: #ff3596;
+  --secondary: #70ff00;
 
-// primary
-$pink5: #4d0025;
-$pink10: #660031;
-$pink20: #990049;
-$pink30: #cc0062;
-$pink40: #ff007a;
-$pink50: #ff3596;
-$pink60: #ff66af;
-$pink70: #ff99ca;
-$pink80: #ffcce4;
-$pink90: #ffebf4;
+  // primary
+  --pink5: #4d0025;
+  --pink10: #660031;
+  --pink20: #990049;
+  --pink30: #cc0062;
+  --pink40: #ff007a;
+  --pink50: #ff3596;
+  --pink60: #ff66af;
+  --pink70: #ff99ca;
+  --pink80: #ffcce4;
+  --pink90: #ffebf4;
 
-// secondary
-$green5: #122900;
-$green10: #224d00;
-$green20: #388000;
-$green30: #4fb200;
-$green40: #65e500;
-$green50: #8dff33;
-$green60: #a9ff66;
-$green70: #c6ff99;
-$green80: #e2ffcc;
-$green90: #f4ffeb;
+  // secondary
+  --green5: #122900;
+  --green10: #224d00;
+  --green20: #388000;
+  --green30: #4fb200;
+  --green40: #65e500;
+  --green50: #8dff33;
+  --green60: #a9ff66;
+  --green70: #c6ff99;
+  --green80: #e2ffcc;
+  --green90: #f4ffeb;
 
-// neutral
-$neutral10: #202020;
-$neutral20: #292929;
-$neutral30: #60656c;
-$neutral40: #9098a2;
-$neutral50: #b2b7bc;
-$neutral60: #ced1d5;
-$neutral70: #e6e8e9;
-$neutral80: #f4f4f5;
-$neutral90: #fbfbfb;
-$neutral100: #ffffff;
+  // neutral
+  --neutral10: #202020;
+  --neutral20: #292929;
+  --neutral30: #60656c;
+  --neutral40: #9098a2;
+  --neutral50: #b2b7bc;
+  --neutral60: #ced1d5;
+  --neutral70: #e6e8e9;
+  --neutral80: #f4f4f5;
+  --neutral90: #fbfbfb;
+  --neutral100: #ffffff;
 
-// text
-$default: #202020;
-$sube: #424549;
-$info: #6c7178;
-$disabled: #9098a2;
+  // text
+  --default: #202020;
+  --sube: #424549;
+  --info: #6c7178;
+  --disabled: #9098a2;
+}

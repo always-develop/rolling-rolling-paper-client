@@ -6,7 +6,7 @@ import 'assets/styles/layouts/CommonLayout.scss';
 function CommonLayout() {
   return (
     <div className="container">
-      <Header />
+      <Header title='헤더 이름' />
       <main className="outlet">
         <Outlet />
       </main>
