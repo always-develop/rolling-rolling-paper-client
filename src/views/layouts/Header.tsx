@@ -1,9 +1,8 @@
-import React from "react";
-// import "assets/styles/layouts/Header.scss";
-import styled from "styled-components";
-import BackButton from "components/svg/BackButton";
-import Alram from "components/svg/Alram";
-import Hamburger from "components/svg/Hamburger";
+import React from 'react';
+import styled from 'styled-components';
+import BackButton from 'components/svg/BackButton';
+import Alram from 'components/svg/Alram';
+import Hamburger from 'components/svg/Hamburger';
 
 type HeaderProps = {
   title: string;
@@ -11,13 +10,13 @@ type HeaderProps = {
 
 function Header(props: HeaderProps) {
   return (
-    <StyledHeader className="header">
+    <StyledHeader>
       <BackButton />
       <span className="header-title">{props.title}</span>
-      <div className="header-right-side">
+      <StyledRightSide>
         <Alram />
         <Hamburger />
-      </div>
+      </StyledRightSide>
     </StyledHeader>
   );
 }
@@ -41,4 +40,10 @@ const StyledHeader = styled.header`
   left: 50%;
   transform: translate(-50%);
   z-index: 999;
+
+  font-size: 2.2rem;
+`;
+
+const StyledRightSide = styled.div`
+  display: flex;
 `;
