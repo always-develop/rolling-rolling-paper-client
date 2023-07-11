@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import SvgWrapper from './SvgWrapper';
 
 export default function BackButton() {
+  const navigate = useNavigate();
+
+  function back() {
+    navigate(-1);
+  }
+
   return (
-    <SvgWrapper>
+    <SvgWrapper onButtonClick={back}>
       <svg
         width="40"
         height="40"
