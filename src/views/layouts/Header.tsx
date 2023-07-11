@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 import BackButton from 'components/svg/BackButton';
 import Alram from 'components/svg/Alram';
@@ -6,6 +6,7 @@ import Hamburger from 'components/svg/Hamburger';
 
 type HeaderProps = {
   title: string;
+  onButtonClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 function Header(props: HeaderProps) {
@@ -16,6 +17,7 @@ function Header(props: HeaderProps) {
       <StyledRightSide>
         <Alram />
         <Hamburger />
+        <StyledButton onClick={props.onButtonClick} />
       </StyledRightSide>
     </StyledHeader>
   );
@@ -46,4 +48,8 @@ const StyledHeader = styled.header`
 
 const StyledRightSide = styled.div`
   display: flex;
+`;
+
+const StyledButton = styled.button`
+  color: var(--text-default, #272626);
 `;
