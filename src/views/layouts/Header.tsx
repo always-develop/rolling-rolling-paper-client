@@ -7,18 +7,38 @@ import Hamburger from 'components/svg/Hamburger';
 type HeaderProps = {
   title: string;
   onButtonClick?: MouseEventHandler<HTMLButtonElement>;
+  actionName?: string;
 };
 
 function Header(props: HeaderProps) {
+  function headerTitle() {
+    if (!props.actionName) {
+      return <span className="header-title">{props.title}</span>;
+    }
+    return '';
+  }
+
+  function rightSide() {
+    if (props.actionName) {
+      return (
+        <StyledButton onClick={props.onButtonClick}>
+          {props.actionName}
+        </StyledButton>
+      );
+    }
+    return (
+      <>
+        <Alram />
+        <Hamburger />
+      </>
+    );
+  }
+
   return (
     <StyledHeader>
       <BackButton />
-      <span className="header-title">{props.title}</span>
-      <StyledRightSide>
-        <Alram />
-        <Hamburger />
-        <StyledButton onClick={props.onButtonClick} />
-      </StyledRightSide>
+      {headerTitle()}
+      <StyledRightSide>{rightSide()}</StyledRightSide>
     </StyledHeader>
   );
 }
@@ -52,4 +72,5 @@ const StyledRightSide = styled.div`
 
 const StyledButton = styled.button`
   color: var(--text-default, #272626);
+  padding: 0 2rem 0 2rem;
 `;
