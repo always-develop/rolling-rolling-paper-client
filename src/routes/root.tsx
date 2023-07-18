@@ -4,6 +4,7 @@ import Login from 'views/Login';
 import SignUp from 'views/SignUp';
 import ClearLayout from 'views/layouts/ClearLayout';
 import CommonLayout from 'views/layouts/CommonLayout';
+import SelectMessageType from 'views/message/SelectMessageType';
 
 export const Routes = [
   {
@@ -29,6 +30,17 @@ export const Routes = [
       {
         path: 'sign-up',
         element: <SignUp />,
+      },
+    ],
+  },
+  {
+    path: '/message',
+    element: <ClearLayout />,
+    // errorElement: </>
+    children: [
+      {
+        path: 'select-type',
+        element: <SelectMessageType />,
       },
     ],
   },
